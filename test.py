@@ -73,7 +73,7 @@ class TestAPI:
         eq_(response.headers['Content-Type'], 'application/json')
         eq_(response.status_code,400)
 
-        #Request without 'message'
+        # Request without 'message'
         response = self.app.post('messages/api/message',
                                 data = json.dumps({'sender':u'Phill'}),
                                 content_type='application/json')
@@ -81,7 +81,7 @@ class TestAPI:
         eq_(response.headers['Content-Type'], 'application/json')
         eq_(response.status_code,400)
 
-        #Request with 'message' but not unicode
+        # Request with 'message' but not unicode
         response = self.app.post('messages/api/message',
                                 data = json.dumps({'message':234534634}),
                                 content_type='application/json')
